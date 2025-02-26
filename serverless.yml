@@ -1,0 +1,17 @@
+service: aws-python-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /holamundo
+          method: GET
